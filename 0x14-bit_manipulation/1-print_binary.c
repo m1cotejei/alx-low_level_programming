@@ -1,13 +1,12 @@
 #include "main.h"
-
-void print_binary(unsigned long int li)
+void print_binary(unsigned long int n)
 {
-	int li, count = 0;
+	int i, count = 0;
 	unsigned long int current;
 
-	for (li = 63; li >= 0; li--)
+	for (i = 63; i >= 0; i--)
 	{
-		current = n >> li;
+		current = n >> i;
 
 		if (current & 1)
 		{
