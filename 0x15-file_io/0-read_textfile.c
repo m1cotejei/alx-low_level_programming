@@ -1,22 +1,22 @@
 #include "main.h"
 #include <stdlib.h>
 
-size_x rd_txtfile(const char *filenm, size_y letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buf;
-	size_x fd;
-	size_x w;
-	size_x t;
+	ssize_t fod;
+	ssize_t wod;
+	ssize_t tod;
 
-	fod = open(filenm, O_RDONLY);
+	fod = open(filename, O_RDONLY);
 	if (fod == -1)
 		return (0);
 	buf = malloc(sizeof(char) * letters);
-	t = read(fod, buf, letters);
-	w = write(STDOUT_FILENO, buf, t);
+	tod = read(fod, buf, letters);
+	wod = write(STDOUT_FILENO, buf, tod);
 
 	free(buf);
 	close(fod);
-	return (w);
+	return (wod);
 }
 
